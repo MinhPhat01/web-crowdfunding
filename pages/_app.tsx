@@ -3,9 +3,11 @@ import type { AppProps } from "next/app";
 
 import { type EmotionCache, CacheProvider } from "@emotion/react";
 
+import { Head } from "@/hocs";
 import { ThemeProvider } from "@/contexts";
 import { createEmotionCache } from "@/utils";
-import { Head } from "@/hocs";
+
+import { Layout } from "@/compositions";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -21,7 +23,9 @@ export default function App(props: MyAppProps) {
     <CacheProvider value={emotionCache}>
       <Head />
       <ThemeProvider>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </CacheProvider>
   );

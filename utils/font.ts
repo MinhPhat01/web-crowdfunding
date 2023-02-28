@@ -1,4 +1,4 @@
-import { Epilogue } from "@next/font/google";
+import { Epilogue } from "next/font/google";
 
 const EpilogueFont = Epilogue({
   subsets: ["latin"],

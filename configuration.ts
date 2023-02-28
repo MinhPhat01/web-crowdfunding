@@ -11,6 +11,10 @@ export const PALETTE_COLOR = {
   neutral3: "#808191",
   neutral4: "#A2A2A8",
   neutral5: "#B2B3BD",
+  primaryDisabled: "#D2F2E3",
+  primaryHovered: "#77D9AA",
+  secondaryDisabled: "#E2DBFF",
+  secondaryHovered: "#A992FE",
 };
 
 export const PSEUDO_STATE = {

@@ -4,6 +4,8 @@ declare module "@mui/material/styles/createTypography" {
     bodyText2?: TypographyStyle;
     paragraphText?: TypographyStyle;
     paragraphText2?: TypographyStyle;
+    buttonPrimary?: TypographyStyle;
+    buttonSecondary?: TypographyStyle;
   }
 
   interface TypographyOptions {
@@ -11,6 +13,8 @@ declare module "@mui/material/styles/createTypography" {
     bodyText2?: TypographyStyle;
     paragraphText?: TypographyStyle;
     paragraphText2?: TypographyStyle;
+    buttonPrimary?: TypographyStyle;
+    buttonSecondary?: TypographyStyle;
   }
 }
 
@@ -20,6 +24,8 @@ declare module "@mui/material/Typography" {
     bodyText2: true;
     paragraphText: true;
     paragraphText2: true;
+    buttonPrimary: true;
+    buttonSecondary: true;
   }
 }
 
