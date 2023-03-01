@@ -87,7 +87,7 @@ const StyledHeaderRight = styled(Box)(() => {
 
 const StyledGridWrapper = styled(Grid)(() => {
   return {
-    paddingTop: "2.5rem",
+    paddingTop: "1.1rem",
     alignItems: "center",
   };
 });
