@@ -38,6 +38,9 @@ declare module "@mui/material/styles/createPalette" {
       neutral4: string;
       neutral5: string;
     };
+    colorIcon: {
+      colorIcon: string;
+    };
   }
 
   interface PaletteOptions {
@@ -47,6 +50,9 @@ declare module "@mui/material/styles/createPalette" {
       neutral3: string;
       neutral4: string;
       neutral5: string;
+    };
+    colorIcon: {
+      colorIcon: string;
     };
   }
 }

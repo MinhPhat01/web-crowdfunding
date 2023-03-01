@@ -15,6 +15,7 @@ export const PALETTE_COLOR = {
   primaryHovered: "#77D9AA",
   secondaryDisabled: "#E2DBFF",
   secondaryHovered: "#A992FE",
+  colorIcon: "#A2A2A8",
 };
 
 export const PSEUDO_STATE = {

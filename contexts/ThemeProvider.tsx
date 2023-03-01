@@ -64,6 +64,9 @@ const defaultTheme = createTheme({
       neutral4: PALETTE_COLOR.neutral4,
       neutral5: PALETTE_COLOR.neutral5,
     },
+    colorIcon: {
+      colorIcon: PALETTE_COLOR.colorIcon,
+    },
   },
   typography: {
     fontFamily: EpilogueFont.style.fontFamily,
@@ -140,6 +143,7 @@ const theme = createTheme({
           whiteSpace: "nowrap",
           padding: "13px",
           borderRadius: "10px",
+          color: defaultTheme.palette.common.white,
           [PSEUDO_STATE.hover]: {
             backgroundColor: PALETTE_COLOR.primaryHovered,
           },
@@ -242,10 +246,18 @@ const theme = createTheme({
     },
     MuiContainer: {
       styleOverrides: {
-        root: {},
+        root: {
+          maxWidth: "1400px !important",
+        },
       },
-      defaultProps: {
-        maxWidth: "lg",
+      defaultProps: {},
+    },
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          fill: "none",
+          stroke: defaultTheme.palette.common.white,
+        },
       },
     },
   },
