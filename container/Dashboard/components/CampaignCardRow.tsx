@@ -5,7 +5,7 @@ import { Box, Grid, Stack, styled, Typography, useTheme } from "@mui/material";
 import { IconFolder, Image, NumberFormatForUSD } from "@/components";
 import { CARD_ROW_IMG_RATIO } from "@/constant";
 
-type CampaignCardRow = {
+type CampaignCardRowProps = {
   img: string;
   category: string;
   title: string;
@@ -13,10 +13,12 @@ type CampaignCardRow = {
   amount: number;
   backers: number;
   date: number;
+  raised: number;
 };
 
-export default function CampaignCardRow(props: CampaignCardRow) {
-  const { img, amount, backers, category, date, description, title } = props;
+export default function CampaignCardRow(props: CampaignCardRowProps) {
+  const { img, amount, backers, category, date, description, title, raised } =
+    props;
   const [ref, { width }] = useMeasure();
   const theme = useTheme();
 
@@ -55,14 +57,7 @@ export default function CampaignCardRow(props: CampaignCardRow) {
 
                 <Typography variant="h3">{title}</Typography>
 
-                <Typography
-                  variant="paragraphText"
-                  lineHeight="14px"
-                  fontWeight={400}
-                  color={theme.palette.neutral.neutral3}
-                >
-                  {`${description}`}
-                </Typography>
+                <StyledDesc>{`${description}`}</StyledDesc>
 
                 <StyledWrapperProgressbar>
                   <StyledProgressbar />
@@ -70,35 +65,33 @@ export default function CampaignCardRow(props: CampaignCardRow) {
 
                 <Grid container>
                   <Grid item xs={4}>
-                    <StyledNumber variant="h3">
+                    <StyledNumber>
                       <NumberFormatForUSD value={amount} />
                     </StyledNumber>
                   </Grid>
 
                   <Grid item xs={4}>
-                    <StyledNumber variant="h3">{backers}</StyledNumber>
+                    <StyledNumber>{backers}</StyledNumber>
                   </Grid>
 
                   <Grid item xs={4}>
-                    <StyledNumber variant="h3">{date}</StyledNumber>
+                    <StyledNumber>{date}</StyledNumber>
                   </Grid>
                 </Grid>
 
                 <Grid container>
                   <Grid item xs={4}>
-                    <StyledSubText variant="bodyText2">
-                      Raised of $2,500
+                    <StyledSubText>
+                      Raised of <NumberFormatForUSD value={raised} />
                     </StyledSubText>
                   </Grid>
 
                   <Grid item xs={4}>
-                    <StyledSubText variant="bodyText2">
-                      Total backers
-                    </StyledSubText>
+                    <StyledSubText>Total backers</StyledSubText>
                   </Grid>
 
                   <Grid item xs={4}>
-                    <StyledSubText variant="bodyText2">Days left</StyledSubText>
+                    <StyledSubText>Days left</StyledSubText>
                   </Grid>
                 </Grid>
               </Stack>
@@ -110,14 +103,24 @@ export default function CampaignCardRow(props: CampaignCardRow) {
   );
 }
 
+const StyledDesc = styled(Typography)(({ theme }) => {
+  return {
+    ...theme.typography.paragraphText,
+    color: theme.palette.neutral.neutral3,
+    fontWeight: 400,
+  };
+});
+
 const StyledNumber = styled(Typography)(({ theme }) => {
   return {
+    ...theme.typography.h3,
     color: theme.palette.neutral.neutral2,
   };
 });
 
 const StyledSubText = styled(Typography)(({ theme }) => {
   return {
+    ...theme.typography.bodyText2,
     lineHeight: "26px",
     color: theme.palette.neutral.neutral4,
     fontWeight: 400,

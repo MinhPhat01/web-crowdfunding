@@ -11,6 +11,7 @@ import {
   IconProfile,
   IconWithdraw,
 } from "@/components";
+import { BOX_SHADOW_COMMON } from "@/constant";
 
 export const listNavbar = [
   {
@@ -95,7 +96,7 @@ export default function Navbar() {
 
 const StyledWrapperNavbar = styled(Box)(({ theme }) => {
   return {
-    boxShadow: "0 25px 50px -12px rgb(0 0 0 / 0.25)",
+    boxShadow: BOX_SHADOW_COMMON,
     backgroundColor: theme.palette.common.white,
     padding: "2rem",
     borderRadius: "1.25rem",

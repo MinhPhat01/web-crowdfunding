@@ -3,6 +3,7 @@ import React from "react";
 import { Button, InputBase, styled } from "@mui/material";
 
 import { IconSearch } from "@/components";
+import { BOX_SHADOW_COMMON } from "@/constant";
 
 export default function SearchInput() {
   return (
@@ -26,7 +27,7 @@ const StyledSearchInput = styled(InputBase)(({ theme }) => {
     width: "100%",
     padding: "6px 12px",
     borderRadius: "6.25rem",
-    boxShadow: "0 25px 50px -12px rgb(0 0 0 / 0.25)",
+    boxShadow: BOX_SHADOW_COMMON,
     ...theme.typography.paragraphText,
     fontWeight: 400,
   };

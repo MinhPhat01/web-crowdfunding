@@ -1,10 +1,9 @@
 import { Fragment } from "react";
 
-import { Box } from "@mui/material";
-
 import Headline from "@/components/Headline/Headline";
 import CampaignCardRow from "./components/CampaignCardRow";
 import { Spacing } from "@/components";
+import PopularCampaign from "./components/PopularCampaign";
 
 const Dashboard = () => {
   return (
@@ -22,7 +21,16 @@ const Dashboard = () => {
         amount={200}
         backers={173}
         date={30}
+        raised={190}
       />
+
+      <Spacing spacing={5} />
+
+      <Headline title="Popular Campaign" />
+
+      <Spacing spacing={1.25} />
+
+      <PopularCampaign />
     </Fragment>
   );
 };
