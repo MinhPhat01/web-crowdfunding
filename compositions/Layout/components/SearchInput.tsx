@@ -25,11 +25,12 @@ const ButtonSearch = () => {
 const StyledSearchInput = styled(InputBase)(({ theme }) => {
   return {
     width: "100%",
-    padding: "6px 12px",
+    padding: "6px 8px 6px 12px",
     borderRadius: "6.25rem",
     boxShadow: BOX_SHADOW_COMMON,
     ...theme.typography.paragraphText,
     fontWeight: 400,
+    backgroundColor: theme.palette.common.white,
   };
 });
 

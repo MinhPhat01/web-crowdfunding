@@ -1,4 +1,4 @@
-import { Box, Grid, styled, Button, Avatar } from "@mui/material";
+import { Box, Grid, styled, Button, Avatar, Container } from "@mui/material";
 
 import { Image } from "@/components";
 import Fundrasing from "./components/Fundrasing";

@@ -69,7 +69,7 @@ export default function Navbar() {
 
   return (
     <StyledWrapperNavbar>
-      <Stack alignItems="center" rowGap="11rem">
+      <Stack alignItems="center" rowGap="7rem">
         <Stack rowGap="1.875rem" alignItems="center">
           {listNavbar &&
             listNavbar.map((item) => {

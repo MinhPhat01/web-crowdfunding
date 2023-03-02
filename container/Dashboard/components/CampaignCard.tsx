@@ -112,7 +112,6 @@ const StyledWrapperCard = styled(Box)(({ theme }) => {
   return {
     borderRadius: "15px",
     backgroundColor: theme.palette.common.white,
-    boxShadow: BOX_SHADOW_COMMON,
   };
 });
 

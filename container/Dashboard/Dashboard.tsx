@@ -1,13 +1,12 @@
-import { Fragment } from "react";
-
+import { Spacing, WrapperSection } from "@/components";
 import Headline from "@/components/Headline/Headline";
 import CampaignCardRow from "./components/CampaignCardRow";
-import { Spacing } from "@/components";
 import PopularCampaign from "./components/PopularCampaign";
+import RecentCampaign from "./components/RecentCampaign";
 
 const Dashboard = () => {
   return (
-    <Fragment>
+    <WrapperSection>
       <Headline title="Your Campaign" quantity={4} />
 
       <Spacing spacing={1.25} />
@@ -31,7 +30,15 @@ const Dashboard = () => {
       <Spacing spacing={1.25} />
 
       <PopularCampaign />
-    </Fragment>
+
+      <Spacing spacing={5} />
+
+      <Headline title="Recent Campaign" />
+
+      <Spacing spacing={1.25} />
+
+      <RecentCampaign />
+    </WrapperSection>
   );
 };
 

@@ -1,6 +1,7 @@
 export { default as Image } from "./Image";
 export { default as Spacing } from "./Spacing";
 export { default as NumberFormatForUSD } from "./NumberFormatForUSD";
+export { default as WrapperSection } from "./WrapperSection/WrapperSection";
 
 //Icon
 export { default as IconSearch } from "./Icons/IconSearch";

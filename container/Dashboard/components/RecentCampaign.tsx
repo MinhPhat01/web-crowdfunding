@@ -5,7 +5,7 @@ import { Grid } from "@mui/material";
 import CampaignCard from "./CampaignCard";
 import { cardList } from "@/constant";
 
-const PopularCampaign = () => {
+const RecentCampaign = () => {
   const renderCampaignCard = useMemo(() => {
     if (cardList == undefined) return null;
     return cardList.map((item) => {
@@ -36,4 +36,4 @@ const PopularCampaign = () => {
   );
 };
 
-export default PopularCampaign;
+export default RecentCampaign;
