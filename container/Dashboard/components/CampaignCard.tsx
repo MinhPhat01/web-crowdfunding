@@ -43,7 +43,7 @@ const CampaignCard = (props: CampaignCardProps) => {
 
   return (
     <StyledWrapperCard>
-      <Box ref={ref}>
+      <Box ref={ref} sx={{ borderRadius: "15px" }}>
         <Image
           src={img}
           alt={title}

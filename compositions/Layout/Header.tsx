@@ -1,10 +1,8 @@
-import { Box, Grid, styled, Button, Avatar, Container } from "@mui/material";
+import { Box, Grid, styled, Avatar } from "@mui/material";
 
-import { Image } from "@/components";
 import Fundrasing from "./components/Fundrasing";
 import SearchInput from "./components/SearchInput";
-
-import { PALETTE_COLOR, PSEUDO_STATE } from "@/configuration";
+import { ButtonSecondary, Image } from "@/components";
 
 export default function Header() {
   return (
@@ -41,7 +39,7 @@ const HeaderRight = () => {
     <StyledHeaderRight>
       <Fundrasing />
 
-      <StyledButtonStart color="secondary">Start a campaign</StyledButtonStart>
+      <ButtonSecondary title="Start a campaign" />
 
       <StyledWrapperAvatar>
         <Avatar alt="Cat" src="/images/cat.avif" />
@@ -56,17 +54,6 @@ const StyledWrapperImg = styled(Box)(() => {
   return {
     width: "52px",
     margin: "0 auto",
-  };
-});
-
-const StyledButtonStart = styled(Button)(() => {
-  return {
-    textTransform: "none",
-    paddingLeft: "26px",
-    paddingRight: "26px",
-    [PSEUDO_STATE.hover]: {
-      backgroundColor: PALETTE_COLOR.secondaryHovered,
-    },
   };
 });
 

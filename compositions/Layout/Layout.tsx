@@ -1,36 +1,50 @@
-import React, { Fragment } from "react";
+import React from "react";
 
-import { Box, Container, Grid, Stack } from "@mui/material";
+import { Box, Container, Grid, Stack, styled } from "@mui/material";
 
 import Header from "./Header";
 import { Spacing } from "@/components";
 import Navbar from "./components/Navbar";
+import { useMedia } from "@/hooks/useMedia";
+import HeaderMobile from "./HeaderMobile";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const { isMdDown, isMdUp } = useMedia();
   return (
-    <Box
-      sx={{
-        backgroundColor: "#f5f5f5",
-        height: "100vh",
-        overflow: "hidden",
-      }}
-    >
+    <StyledWrapperLayout>
       <Container>
         <Stack flexDirection="column">
-          <Header />
+          {isMdDown ? <HeaderMobile /> : <Header />}
 
           <Spacing spacing={3.75} />
 
-          <Grid container columnSpacing="2.5rem">
-            <Grid item xs={1}>
-              <Navbar />
-            </Grid>
-            <Grid item xs={11} sx={{ overflow: "hidden", height: "80vh" }}>
+          <Grid container spacing="2.5rem">
+            {isMdUp && (
+              <Grid item xs={1}>
+                <Navbar />
+              </Grid>
+            )}
+
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={11}
+              sx={{ overflow: "hidden", height: "80vh" }}
+            >
               {children}
             </Grid>
           </Grid>
         </Stack>
       </Container>
-    </Box>
+    </StyledWrapperLayout>
   );
 }
+
+const StyledWrapperLayout = styled(Box)(() => {
+  return {
+    backgroundColor: "#f5f5f5",
+    height: "100vh",
+    overflow: "hidden",
+  };
+});
