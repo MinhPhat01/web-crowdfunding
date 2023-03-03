@@ -1,8 +1,9 @@
 import { Spacing, WrapperSection } from "@/components";
 import Headline from "@/components/Headline/Headline";
-import CampaignCardRow from "./components/CampaignCardRow";
-import PopularCampaign from "./components/PopularCampaign";
+
 import RecentCampaign from "./components/RecentCampaign";
+import PopularCampaign from "./components/PopularCampaign";
+import CampaignCardHeader from "./components/CampaignCardHeader";
 
 const Dashboard = () => {
   return (
@@ -11,7 +12,7 @@ const Dashboard = () => {
 
       <Spacing spacing={1.25} />
 
-      <CampaignCardRow
+      <CampaignCardHeader
         img="/images/card1.avif"
         category="Architecture"
         title="Remake - We Make architecture exhibition"

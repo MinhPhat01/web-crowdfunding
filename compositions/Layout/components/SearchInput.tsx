@@ -25,7 +25,7 @@ const ButtonSearch = () => {
 const StyledSearchInput = styled(InputBase)(({ theme }) => {
   return {
     width: "100%",
-    padding: "6px 8px 6px 12px",
+    padding: "4px 6px 4px 20px",
     borderRadius: "6.25rem",
     boxShadow: BOX_SHADOW_COMMON,
     ...theme.typography.paragraphText,
@@ -34,10 +34,10 @@ const StyledSearchInput = styled(InputBase)(({ theme }) => {
   };
 });
 
-const StyledButtonSearch = styled(Button)(() => {
+const StyledButtonSearch = styled(Button)(({ theme }) => {
   return {
     borderRadius: "2.4rem",
     padding: "0.75rem 1.75rem",
-    backgroundColor: "#4ACD8D",
+    backgroundColor: theme.palette.primary.main,
   };
 });

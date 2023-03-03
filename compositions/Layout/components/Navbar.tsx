@@ -2,61 +2,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Box, BoxProps, Stack, styled } from "@mui/material";
 
-import {
-  IconCampaign,
-  IconDashboard,
-  IconLight,
-  IconLogout,
-  IconPayment,
-  IconProfile,
-  IconWithdraw,
-} from "@/components";
+import { IconLight } from "@/components";
 import { BOX_SHADOW_COMMON } from "@/constant";
-
-export const listNavbar = [
-  {
-    id: 1,
-    icon: <IconDashboard sx={{ stroke: "#A2A2A8" }} />,
-    iconActive: <IconDashboard sx={{ stroke: "#1DC071" }} />,
-    src: "/",
-  },
-  {
-    id: 2,
-    icon: <IconCampaign sx={{ stroke: "#A2A2A8" }} />,
-    iconActive: <IconCampaign sx={{ fill: "#1DC071" }} />,
-    src: "/campaign",
-  },
-  {
-    id: 3,
-    icon: <IconPayment sx={{ stroke: "#A2A2A8" }} />,
-    iconActive: <IconPayment sx={{ stroke: "#1DC071" }} />,
-    src: "/payment",
-  },
-  {
-    id: 4,
-    icon: <IconWithdraw sx={{ stroke: "#A2A2A8" }} />,
-    iconActive: <IconWithdraw sx={{ stroke: "#1DC071" }} />,
-    src: "/withdraw",
-  },
-  {
-    id: 5,
-    icon: <IconProfile sx={{ stroke: "#A2A2A8" }} />,
-    iconActive: (
-      <IconProfile
-        sx={{
-          stroke: "#1DC071",
-        }}
-      />
-    ),
-    src: "/profile",
-  },
-  {
-    id: 6,
-    icon: <IconLogout sx={{ stroke: "#A2A2A8" }} />,
-    iconActive: <IconLogout sx={{ stroke: "#1DC071" }} />,
-    src: "/logout",
-  },
-];
+import { listNavbar } from "@/ListNavbar";
 
 interface BoxWrapperIconProps extends BoxProps {
   currentRouter?: string;

@@ -10,7 +10,7 @@ export default function WrapperSection({
   return (
     <StyledWrapperSection>
       {children}
-      <Spacing spacing={20} />
+      <Spacing spacing={25} />
     </StyledWrapperSection>
   );
 }
@@ -20,5 +20,11 @@ const StyledWrapperSection = styled(Box)(() => {
     height: "100vh",
     overflow: "hidden",
     overflowY: "auto",
+    ["::-webkit-scrollbar"]: {
+      display: "none",
+    },
+    msOverflowStyle: "none",
+    scrollbarWidth: "none",
+    scrollBehavior: "smooth",
   };
 });

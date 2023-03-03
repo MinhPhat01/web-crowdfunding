@@ -10,7 +10,7 @@ const PopularCampaign = () => {
     if (cardList == undefined) return null;
     return cardList.map((item) => {
       return (
-        <Grid item xs={3} key={item.id}>
+        <Grid item xs={12} sm={6} md={3} key={item.id}>
           <CampaignCard
             title={item.title}
             amount={item.amount}
