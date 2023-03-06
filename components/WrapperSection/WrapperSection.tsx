@@ -10,7 +10,7 @@ export default function WrapperSection({
   return (
     <StyledWrapperSection>
       {children}
-      <Spacing spacing={25} />
+      <Spacing spacing={24} />
     </StyledWrapperSection>
   );
 }

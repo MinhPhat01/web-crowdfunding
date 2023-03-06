@@ -4,6 +4,9 @@ export { default as NumberFormatForUSD } from "./NumberFormatForUSD";
 export { default as WrapperSection } from "./WrapperSection/WrapperSection";
 export { default as ButtonSecondary } from "./Button/ButtonSecondary";
 export { default as Link } from "./Link";
+export { default as Headline } from "./Headline/Headline";
+export { default as CampaignCard } from "./CampaignCard/CampaignCard";
+export { default as CampaignCardHeader } from "./CampaignCard/CampaignCardHeader";
 
 //Icon
 export { default as IconSearch } from "./Icons/IconSearch";
@@ -17,3 +20,4 @@ export { default as IconProfile } from "./Icons/IconProfile";
 export { default as IconLogout } from "./Icons/IconLogout";
 export { default as IconLight } from "./Icons/IconLight";
 export { default as IconFolder } from "./Icons/IconFolder";
+export { default as IconPlus } from "./Icons/IconPlus";
