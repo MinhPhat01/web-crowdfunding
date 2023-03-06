@@ -1,17 +1,18 @@
+export { default as Link } from "./Link";
 export { default as Image } from "./Image";
 export { default as Spacing } from "./Spacing";
-export { default as NumberFormatForUSD } from "./NumberFormatForUSD";
-export { default as WrapperSection } from "./WrapperSection/WrapperSection";
-export { default as ButtonSecondary } from "./Button/ButtonSecondary";
-export { default as Link } from "./Link";
 export { default as Headline } from "./Headline/Headline";
+export { default as PaymentCard } from "./PaymentCard/PaymentCard";
+export { default as NumberFormatForUSD } from "./NumberFormatForUSD";
 export { default as CampaignCard } from "./CampaignCard/CampaignCard";
+export { default as ButtonSecondary } from "./Button/ButtonSecondary";
+export { default as WrapperSection } from "./WrapperSection/WrapperSection";
 export { default as CampaignCardHeader } from "./CampaignCard/CampaignCardHeader";
 
 //Icon
+export { default as IconUp } from "./Icons/IconUp";
 export { default as IconSearch } from "./Icons/IconSearch";
 export { default as IconArrowDown } from "./Icons/IconArrowDown";
-export { default as IconUp } from "./Icons/IconUp";
 export { default as IconDashboard } from "./Icons/IconDashboard";
 export { default as IconCampaign } from "./Icons/IconCampaign";
 export { default as IconPayment } from "./Icons/IconPayment";

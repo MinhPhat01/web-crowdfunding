@@ -54,3 +54,18 @@ export const cardList = [
     author: "Nill",
   },
 ];
+
+export const listPayment = [
+  {
+    id: 1,
+    name: "Paypal",
+    logoSrc: "/images/logoPaypal.png",
+    desc: "Get paid directly via Paypal.",
+  },
+  {
+    id: 2,
+    name: "Payonner",
+    logoSrc: "/images/logoPayonner.png",
+    desc: "Get paid worldwide your Work.",
+  },
+];
