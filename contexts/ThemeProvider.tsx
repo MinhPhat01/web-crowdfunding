@@ -255,7 +255,6 @@ const theme = createTheme({
     MuiSvgIcon: {
       styleOverrides: {
         root: {
-          fill: "none",
           stroke: defaultTheme.palette.common.white,
         },
       },

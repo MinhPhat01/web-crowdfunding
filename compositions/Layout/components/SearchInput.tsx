@@ -17,7 +17,7 @@ export default function SearchInput() {
 const ButtonSearch = () => {
   return (
     <StyledButtonSearch>
-      <IconSearch />
+      <IconSearch sx={{ fill: "none" }} />
     </StyledButtonSearch>
   );
 };
