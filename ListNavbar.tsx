@@ -12,39 +12,40 @@ export const listNavbar = [
   {
     id: 1,
     name: "Dashboard",
-    icon: <IconDashboard sx={{ stroke: "#A2A2A8" }} />,
-    iconActive: <IconDashboard sx={{ stroke: "#1DC071" }} />,
+    icon: <IconDashboard sx={{ stroke: "#A2A2A8", fill: "none" }} />,
+    iconActive: <IconDashboard sx={{ stroke: "#1DC071", fill: "none" }} />,
     src: "/",
   },
   {
     id: 2,
     name: "Campaign",
-    icon: <IconCampaign sx={{ stroke: "#A2A2A8" }} />,
-    iconActive: <IconCampaign sx={{ fill: "#1DC071" }} />,
+    icon: <IconCampaign sx={{ stroke: "#A2A2A8", fill: "none" }} />,
+    iconActive: <IconCampaign sx={{ stroke: "#1DC071", fill: "none" }} />,
     src: "/campaign",
   },
   {
     id: 3,
     name: "Payment",
-    icon: <IconPayment sx={{ stroke: "#A2A2A8" }} />,
-    iconActive: <IconPayment sx={{ stroke: "#1DC071" }} />,
+    icon: <IconPayment sx={{ stroke: "#A2A2A8", fill: "none" }} />,
+    iconActive: <IconPayment sx={{ stroke: "#1DC071", fill: "none" }} />,
     src: "/payment",
   },
   {
     id: 4,
     name: "Withdraw",
-    icon: <IconWithdraw sx={{ stroke: "#A2A2A8" }} />,
-    iconActive: <IconWithdraw sx={{ stroke: "#1DC071" }} />,
+    icon: <IconWithdraw sx={{ stroke: "#A2A2A8", fill: "none" }} />,
+    iconActive: <IconWithdraw sx={{ stroke: "#1DC071", fill: "none" }} />,
     src: "/withdraw",
   },
   {
     id: 5,
     name: "Profile",
-    icon: <IconProfile sx={{ stroke: "#A2A2A8" }} />,
+    icon: <IconProfile sx={{ stroke: "#A2A2A8", fill: "none" }} />,
     iconActive: (
       <IconProfile
         sx={{
           stroke: "#1DC071",
+          fill: "none",
         }}
       />
     ),
@@ -53,8 +54,8 @@ export const listNavbar = [
   {
     id: 6,
     name: "Logout",
-    icon: <IconLogout sx={{ stroke: "#A2A2A8" }} />,
-    iconActive: <IconLogout sx={{ stroke: "#1DC071" }} />,
+    icon: <IconLogout sx={{ stroke: "#A2A2A8", fill: "none" }} />,
+    iconActive: <IconLogout sx={{ stroke: "#1DC071", fill: "none" }} />,
     src: "/logout",
   },
 ];

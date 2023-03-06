@@ -2,20 +2,22 @@ import { Box, Grid, styled, Avatar } from "@mui/material";
 
 import Fundrasing from "./components/Fundrasing";
 import SearchInput from "./components/SearchInput";
-import { ButtonSecondary, Image } from "@/components";
+import { ButtonSecondary, Image, Link } from "@/components";
 
 export default function Header() {
   return (
     <StyledGridWrapper container columnSpacing="2.5rem">
       <Grid item xs={1}>
         <StyledWrapperImg>
-          <Image
-            alt="logo"
-            width={52}
-            height={52}
-            src="/images/Logo.png"
-            style={{ objectFit: "contain" }}
-          />
+          <Link href="/">
+            <Image
+              alt="logo"
+              width={52}
+              height={52}
+              src="/images/Logo.png"
+              style={{ objectFit: "contain" }}
+            />
+          </Link>
         </StyledWrapperImg>
       </Grid>
 

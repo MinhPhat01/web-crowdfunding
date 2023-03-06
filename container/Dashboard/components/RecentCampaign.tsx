@@ -2,8 +2,8 @@ import React, { Fragment, useMemo } from "react";
 
 import { Grid } from "@mui/material";
 
-import CampaignCard from "./CampaignCard";
 import { cardList } from "@/constant";
+import { CampaignCard } from "@/components";
 
 const RecentCampaign = () => {
   const renderCampaignCard = useMemo(() => {

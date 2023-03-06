@@ -1,9 +1,12 @@
-import { Spacing, WrapperSection } from "@/components";
-import Headline from "@/components/Headline/Headline";
+import {
+  CampaignCardHeader,
+  Headline,
+  Spacing,
+  WrapperSection,
+} from "@/components";
 
 import RecentCampaign from "./components/RecentCampaign";
 import PopularCampaign from "./components/PopularCampaign";
-import CampaignCardHeader from "./components/CampaignCardHeader";
 
 const Dashboard = () => {
   return (
