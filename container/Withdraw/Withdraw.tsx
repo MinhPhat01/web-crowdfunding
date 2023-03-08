@@ -54,8 +54,6 @@ export default function Withdraw() {
             <Stack gap="30px">{renderListItem}</Stack>
           </StyledWrapperItem>
         </Grid>
-
-        {/* <Grid item xs={3}></Grid> */}
       </Grid>
     </WrapperSection>
   );

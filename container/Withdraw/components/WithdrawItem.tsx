@@ -38,7 +38,16 @@ export default function WithdrawItem(props: WithdrawItemProps) {
           />
 
           <Stack>
-            <Typography variant="paragraphText2">{title}</Typography>
+            <Typography
+              variant="paragraphText2"
+              color={
+                theme.palette.mode === "dark"
+                  ? theme.palette.common.white
+                  : theme.palette.common.black
+              }
+            >
+              {title}
+            </Typography>
             <Typography
               variant="paragraphText"
               color={theme.palette.neutral.neutral3}
@@ -61,7 +70,15 @@ export default function WithdrawItem(props: WithdrawItemProps) {
       </Grid>
 
       <Grid item xs={2.5}>
-        <Typography variant="paragraphText2" fontWeight={600}>
+        <Typography
+          variant="paragraphText2"
+          fontWeight={600}
+          color={
+            theme.palette.mode === "dark"
+              ? theme.palette.common.white
+              : theme.palette.common.black
+          }
+        >
           <NumberFormatForUSD value={amount} />
         </Typography>
       </Grid>
