@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Button, InputBase, styled } from "@mui/material";
 
 import { IconSearch } from "@/components";
