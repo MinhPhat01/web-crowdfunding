@@ -11,8 +11,6 @@ import { Layout } from "@/compositions";
 
 const clientSideEmotionCache = createEmotionCache();
 
-ThemeProvider;
-
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
 }

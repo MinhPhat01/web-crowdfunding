@@ -1,7 +1,7 @@
 import React, { Fragment, useCallback, useState } from "react";
 import Hamburger from "hamburger-react";
 
-import { Avatar, Box, Fade, styled } from "@mui/material";
+import { Avatar, Box, styled } from "@mui/material";
 
 import Menubar from "./components/Menubar";
 import SearchInput from "./components/SearchInput";
@@ -30,7 +30,7 @@ export default function HeaderMobile() {
   );
 }
 
-const StyledWrapperHeaderMobile = styled(Box)(() => {
+const StyledWrapperHeaderMobile = styled(Box)(({ theme }) => {
   return {
     paddingTop: "20px",
     width: "100%",

@@ -10,11 +10,25 @@ export default function Headline({ title, quantity }: HeadlineProps) {
   const theme = useTheme();
   return (
     <Stack flexDirection="row" alignItems="center" columnGap="8px">
-      <Typography variant="bodyText" color={theme.palette.common.black}>
+      <Typography
+        variant="bodyText"
+        color={
+          theme.palette.mode === "dark"
+            ? theme.palette.common.white
+            : theme.palette.common.black
+        }
+      >
         {title}
       </Typography>
       {quantity && (
-        <Typography variant="bodyText" color={theme.palette.secondary.main}>
+        <Typography
+          variant="bodyText"
+          color={
+            theme.palette.mode === "dark"
+              ? theme.palette.common.white
+              : theme.palette.secondary.main
+          }
+        >
           ({quantity})
         </Typography>
       )}

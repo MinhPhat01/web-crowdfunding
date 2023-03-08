@@ -19,10 +19,10 @@ type CampaignCardRowProps = {
 export default function CampaignCardHeader(props: CampaignCardRowProps) {
   const { img, amount, backers, category, date, description, title, raised } =
     props;
+  const theme = useTheme();
+
   const [ref, { width }] = useMeasure<HTMLDivElement>();
   const [ref2, { height: height2 }] = useMeasure<HTMLDivElement>();
-
-  const theme = useTheme();
 
   return (
     <Fragment>
@@ -55,7 +55,16 @@ export default function CampaignCardHeader(props: CampaignCardRowProps) {
                 </Typography>
               </Stack>
 
-              <Typography variant="h3">{title}</Typography>
+              <Typography
+                variant="h3"
+                color={
+                  theme.palette.mode === "dark"
+                    ? theme.palette.common.white
+                    : theme.palette.common.black
+                }
+              >
+                {title}
+              </Typography>
 
               <StyledDesc>{`${description}`}</StyledDesc>
 

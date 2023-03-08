@@ -12,8 +12,11 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import { ButtonSecondary, IconLight, Image, Link, Spacing } from "@/components";
+
 import { listNavbar } from "@/ListNavbar";
+import { ButtonSecondary, IconLight, Image, Link, Spacing } from "@/components";
+
+import { useColorMode } from "@/contexts/ColorModeContext";
 
 type MenubarProps = {
   isOpen: boolean;
@@ -29,6 +32,7 @@ export default function Menubar({ isOpen, closeMenu }: MenubarProps) {
   const router = useRouter();
   const { pathname } = router;
   const theme = useTheme();
+  const { toggleColorMode } = useColorMode();
 
   const renderListNavbar = useMemo(() => {
     return listNavbar.map((item) => {
@@ -81,7 +85,7 @@ export default function Menubar({ isOpen, closeMenu }: MenubarProps) {
 
         <StyledNavbar>
           {renderListNavbar}
-          <StyledChangeTheme>
+          <StyledChangeTheme onClick={toggleColorMode}>
             <IconLight
               sx={{
                 fill: "#A2A2A8",
@@ -103,7 +107,7 @@ export default function Menubar({ isOpen, closeMenu }: MenubarProps) {
   );
 }
 
-const StyledWrapperMenubar = styled(Container)(() => {
+const StyledWrapperMenubar = styled(Container)(({ theme }) => {
   return {
     position: "fixed",
     inset: 0,
@@ -112,26 +116,30 @@ const StyledWrapperMenubar = styled(Container)(() => {
     height: "100vh",
     paddingTop: "20px",
     overflow: "hidden",
-    backgroundColor: "#f5f5f5",
+    backgroundColor: theme.palette.mode === "dark" ? "#121218" : "#f5f5f5",
   };
 });
 
 const StyledNavbar = styled(Box)(({ theme }) => {
   return {
-    backgroundColor: theme.palette.common.white,
+    backgroundColor:
+      theme.palette.mode === "dark" ? "#1C1C24" : theme.palette.common.white,
   };
 });
 
 const StyledNavbarItem = styled(Box, {
   shouldForwardProp: (propName) =>
     propName !== "currentPathname" && propName !== "link",
-})<StyledNavbarItemProps>(({ currentPathname, link }) => {
+})<StyledNavbarItemProps>(({ currentPathname, link, theme }) => {
+  const dark = currentPathname === link ? "#3A3A43" : "#1C1C24";
+  const light = currentPathname === link ? "#F1FBF7" : "#fff";
+
   return {
     display: "flex",
     alignItems: "center",
     gap: "20px",
     padding: "14px 20px",
-    backgroundColor: currentPathname === link ? "#F1FBF7" : "#fff",
+    backgroundColor: theme.palette.mode === "dark" ? dark : light,
   };
 });
 

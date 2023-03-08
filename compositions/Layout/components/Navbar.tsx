@@ -1,10 +1,14 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+
 import { Box, BoxProps, Stack, styled } from "@mui/material";
 
 import { IconLight } from "@/components";
-import { BOX_SHADOW_COMMON } from "@/constant";
+
 import { listNavbar } from "@/ListNavbar";
+
+import { BOX_SHADOW_COMMON } from "@/constant";
+import { useColorMode } from "@/contexts/ColorModeContext";
 
 interface BoxWrapperIconProps extends BoxProps {
   currentRouter?: string;
@@ -14,6 +18,7 @@ interface BoxWrapperIconProps extends BoxProps {
 export default function Navbar() {
   const router = useRouter();
   const { pathname } = router;
+  const { toggleColorMode } = useColorMode();
 
   return (
     <StyledWrapperNavbar>
@@ -31,12 +36,13 @@ export default function Navbar() {
             })}
         </Stack>
 
-        <IconLight
-          sx={{
-            fill: "#A2A2A8",
-            cursor: "pointer",
-          }}
-        />
+        <Box sx={{ cursor: "pointer" }} onClick={toggleColorMode}>
+          <IconLight
+            sx={{
+              fill: "#A2A2A8",
+            }}
+          />
+        </Box>
       </Stack>
     </StyledWrapperNavbar>
   );
@@ -45,7 +51,8 @@ export default function Navbar() {
 const StyledWrapperNavbar = styled(Box)(({ theme }) => {
   return {
     boxShadow: BOX_SHADOW_COMMON,
-    backgroundColor: theme.palette.common.white,
+    backgroundColor:
+      theme.palette.mode === "dark" ? "#1C1C24" : theme.palette.common.white,
     padding: "2rem",
     borderRadius: "1.25rem",
   };
@@ -54,14 +61,14 @@ const StyledWrapperNavbar = styled(Box)(({ theme }) => {
 const StyledWrapperIcon = styled(Box, {
   shouldForwardProp: (propName) =>
     propName !== "currentRouter" && propName !== "link",
-})<BoxWrapperIconProps>(({ currentRouter, link }) => {
+})<BoxWrapperIconProps>(({ currentRouter, link, theme }) => {
   if (currentRouter === link) {
     return {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       padding: "8px",
-      background: "#F1FBF7",
+      background: theme.palette.mode === "dark" ? "#3A3A43" : "#F1FBF7",
       borderRadius: "10px",
     };
   } else {

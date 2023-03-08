@@ -1,15 +1,17 @@
-import React from "react";
+import { useMedia } from "@/hooks/useMedia";
 
-import { Box, Container, Grid, Stack, styled } from "@mui/material";
+import { Box, Container, Grid, Stack, styled, useTheme } from "@mui/material";
 
 import Header from "./Header";
 import { Spacing } from "@/components";
 import Navbar from "./components/Navbar";
-import { useMedia } from "@/hooks/useMedia";
 import HeaderMobile from "./HeaderMobile";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const { isMdDown, isMdUp } = useMedia();
+  const theme = useTheme();
+  console.log("🚀 ~ file: Layout.tsx:13 ~ Layout ~ theme:", theme.palette.mode);
+
   return (
     <StyledWrapperLayout>
       <Container>
@@ -41,10 +43,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-const StyledWrapperLayout = styled(Box)(() => {
+const StyledWrapperLayout = styled(Box)(({ theme }) => {
   return {
-    backgroundColor: "#f5f5f5",
     height: "100vh",
     overflow: "hidden",
+    backgroundColor: theme.palette.mode === "dark" ? "#13131A" : "#f5f5f5",
   };
 });
