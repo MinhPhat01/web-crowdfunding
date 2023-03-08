@@ -68,7 +68,8 @@ const StyledWrapper = styled(Box)(({ theme }) => {
     textAlign: "center",
     padding: "1.563rem",
     borderRadius: "1.25rem",
-    backgroundColor: theme.palette.common.white,
+    backgroundColor:
+      theme.palette.mode === "dark" ? "#1C1C24" : theme.palette.common.white,
   };
 });
 
@@ -94,11 +95,12 @@ const StyledButton = styled(ButtonSecondary, {
   } else {
     return {
       width: "100%",
-      color: "#6F49FD",
-      backgroundColor: "#EEEAFD",
+      color:
+        theme.palette.mode === "dark" ? theme.palette.common.white : "#6F49FD",
+      backgroundColor: theme.palette.mode === "dark" ? "#352A65" : "#EEEAFD",
       boxShadow: "none",
       [PSEUDO_STATE.hover]: {
-        backgroundColor: "#EEEAFD",
+        backgroundColor: theme.palette.mode === "dark" ? "#8C6DFD" : "#EEEAFD",
         boxShadow: "none",
       },
     };

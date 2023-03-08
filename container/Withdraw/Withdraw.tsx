@@ -27,7 +27,7 @@ export default function Withdraw() {
   return (
     <WrapperSection>
       <Grid container spacing="2.5rem">
-        <Grid item xs={12} spacing="2rem">
+        <Grid item xs={12}>
           <Box padding="0 30px">
             <Grid container spacing="15px">
               <Grid item xs={4.5}>
@@ -65,12 +65,17 @@ const StyledTitle = styled(Typography)(({ theme }) => {
   return {
     ...theme.typography.paragraphText,
     fontWeight: 600,
+    color:
+      theme.palette.mode === "dark"
+        ? theme.palette.common.white
+        : theme.palette.common.black,
   };
 });
 
 const StyledWrapperItem = styled(Box)(({ theme }) => {
   return {
-    backgroundColor: theme.palette.common.white,
+    backgroundColor:
+      theme.palette.mode === "dark" ? "#1C1C24" : theme.palette.common.white,
     padding: "1rem 1.875rem",
     overflow: "auto",
   };

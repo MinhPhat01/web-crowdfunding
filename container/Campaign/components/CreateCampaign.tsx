@@ -61,7 +61,8 @@ const StyledWrapper = styled(Box)(({ theme }) => {
   return {
     borderRadius: "1.25rem",
     padding: "1.875rem 2rem",
-    backgroundColor: theme.palette.common.white,
+    backgroundColor:
+      theme.palette.mode === "dark" ? "#1C1C24" : theme.palette.common.white,
   };
 });
 

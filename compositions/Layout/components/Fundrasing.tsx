@@ -4,7 +4,7 @@ import { IconArrowDown, IconUp } from "@/components";
 
 export default function Fundrasing() {
   const theme = useTheme();
-  const iconColor = theme.palette.colorIcon.colorIcon;
+  const iconColor = theme.palette?.colorIcon?.colorIcon;
 
   return (
     <Stack
@@ -19,7 +19,7 @@ export default function Fundrasing() {
           stroke: iconColor,
         }}
       />
-      <Typography variant="bodyText" color={theme.palette.neutral.neutral2}>
+      <Typography variant="bodyText" color={theme.palette.neutral?.neutral2}>
         Fundrising for
       </Typography>
 

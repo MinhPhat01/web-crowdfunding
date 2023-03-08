@@ -111,7 +111,8 @@ export default CampaignCard;
 const StyledWrapperCard = styled(Box)(({ theme }) => {
   return {
     borderRadius: "15px",
-    backgroundColor: theme.palette.common.white,
+    backgroundColor:
+      theme.palette.mode === "dark" ? "#1C1C24" : theme.palette.common.white,
   };
 });
 
@@ -132,6 +133,10 @@ const StyledTitle = styled(Typography)(({ theme }) => {
     WebkitBoxOrient: "vertical",
     WebkitLineClamp: 2,
     minHeight: 32 * 2,
+    color:
+      theme.palette.mode === "dark"
+        ? theme.palette.common.white
+        : theme.palette.common.black,
   };
 });
 

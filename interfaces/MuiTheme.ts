@@ -1,3 +1,5 @@
+import { PaletteMode } from "@mui/material";
+
 declare module "@mui/material/styles/createTypography" {
   interface Typography {
     bodyText?: TypographyStyle;
@@ -38,7 +40,8 @@ declare module "@mui/material/styles/createPalette" {
       neutral4: string;
       neutral5: string;
     };
-    colorIcon: {
+
+    colorIcon?: {
       colorIcon: string;
     };
   }
@@ -51,8 +54,9 @@ declare module "@mui/material/styles/createPalette" {
       neutral4: string;
       neutral5: string;
     };
-    colorIcon: {
-      colorIcon: string;
+
+    colorIcon?: {
+      colorIcon?: string;
     };
   }
 }
