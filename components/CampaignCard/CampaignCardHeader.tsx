@@ -20,9 +20,11 @@ export default function CampaignCardHeader(props: CampaignCardRowProps) {
   const { img, amount, backers, category, date, description, title, raised } =
     props;
   const theme = useTheme();
+  const { white, black } = theme.palette.common;
+  const { neutral3 } = theme.palette.neutral;
 
   const [ref, { width }] = useMeasure<HTMLDivElement>();
-  const [ref2, { height: height2 }] = useMeasure<HTMLDivElement>();
+  const [ref2, { height }] = useMeasure<HTMLDivElement>();
 
   return (
     <Fragment>
@@ -33,7 +35,7 @@ export default function CampaignCardHeader(props: CampaignCardRowProps) {
               src={img}
               alt={title}
               width={width}
-              height={height2}
+              height={height}
               style={{
                 objectFit: "cover",
                 borderRadius: "1.5rem",
@@ -46,22 +48,15 @@ export default function CampaignCardHeader(props: CampaignCardRowProps) {
           <StyledWrapper>
             <Stack flexDirection="column" justifyContent="center" rowGap="12px">
               <Stack flexDirection="row" alignItems="center" columnGap="8px">
-                <IconFolder sx={{ fill: theme.palette.neutral.neutral3 }} />
-                <Typography
-                  variant="paragraphText"
-                  color={theme.palette.neutral.neutral3}
-                >
+                <IconFolder sx={{ fill: neutral3 }} />
+                <Typography variant="paragraphText" color={neutral3}>
                   {category}
                 </Typography>
               </Stack>
 
               <Typography
                 variant="h3"
-                color={
-                  theme.palette.mode === "dark"
-                    ? theme.palette.common.white
-                    : theme.palette.common.black
-                }
+                color={theme.palette.mode === "dark" ? white : black}
               >
                 {title}
               </Typography>

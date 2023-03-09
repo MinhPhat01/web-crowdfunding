@@ -38,8 +38,10 @@ const CampaignCard = (props: CampaignCardProps) => {
     avatar,
     author,
   } = props;
-  const [ref, { width }] = useMeasure();
+
   const theme = useTheme();
+  const [ref, { width }] = useMeasure();
+  const { neutral3 } = theme.palette.neutral;
 
   return (
     <StyledWrapperCard>
@@ -59,11 +61,8 @@ const CampaignCard = (props: CampaignCardProps) => {
 
       <StyledWrapperContent>
         <Stack flexDirection="row" alignItems="center" columnGap="8px">
-          <IconFolder sx={{ fill: theme.palette.neutral.neutral3 }} />
-          <Typography
-            variant="paragraphText"
-            color={theme.palette.neutral.neutral3}
-          >
+          <IconFolder sx={{ fill: neutral3 }} />
+          <Typography variant="paragraphText" color={neutral3}>
             {category}
           </Typography>
         </Stack>
@@ -126,6 +125,9 @@ const StyledWrapperContent = styled(Box)(() => {
 });
 
 const StyledTitle = styled(Typography)(({ theme }) => {
+  const white = theme.palette.common.white;
+  const black = theme.palette.common.black;
+
   return {
     ...theme.typography.h3,
     overflow: "hidden",
@@ -133,10 +135,7 @@ const StyledTitle = styled(Typography)(({ theme }) => {
     WebkitBoxOrient: "vertical",
     WebkitLineClamp: 2,
     minHeight: 32 * 2,
-    color:
-      theme.palette.mode === "dark"
-        ? theme.palette.common.white
-        : theme.palette.common.black,
+    color: theme.palette.mode === "dark" ? white : black,
   };
 });
 
