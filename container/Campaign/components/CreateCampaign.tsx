@@ -21,7 +21,16 @@ export default function CreateCampaign() {
             </StyledWrapperIcon>
 
             <Stack flexDirection="column">
-              <Typography variant="h3">Create Your Campaign</Typography>
+              <Typography
+                variant="h3"
+                color={
+                  theme.palette.mode === "dark"
+                    ? theme.palette.common.white
+                    : theme.palette.common.black
+                }
+              >
+                Create Your Campaign
+              </Typography>
 
               <Typography
                 fontWeight={400}

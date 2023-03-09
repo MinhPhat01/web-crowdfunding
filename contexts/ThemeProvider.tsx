@@ -313,7 +313,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
           MuiInput: {
             styleOverrides: {
               root: {
-                color: "#B2B3BD",
+                color: defaultTheme.palette.common.black,
                 fontSize: "14px",
                 lineHeight: "22px",
                 fontWeight: 500,
@@ -327,7 +327,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
                   borderColor: defaultTheme.palette.primary.main,
                 },
                 [COMPONENT_STATE.focused]: {
-                  borderColor: defaultTheme.palette.primary.main,
+                  border: `1px solid ${defaultTheme.palette.primary.main}`,
                 },
                 [COMPONENT_STATE.error]: {
                   borderColor: defaultTheme.palette.error.main,

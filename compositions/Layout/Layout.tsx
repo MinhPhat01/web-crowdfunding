@@ -1,6 +1,6 @@
 import { useMedia } from "@/hooks/useMedia";
 
-import { Box, Container, Grid, Stack, styled, useTheme } from "@mui/material";
+import { Box, Container, Grid, Stack, styled } from "@mui/material";
 
 import Header from "./Header";
 import { Spacing } from "@/components";
@@ -9,9 +9,6 @@ import HeaderMobile from "./HeaderMobile";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const { isMdDown, isMdUp } = useMedia();
-  const theme = useTheme();
-  console.log("🚀 ~ file: Layout.tsx:13 ~ Layout ~ theme:", theme.palette.mode);
-
   return (
     <StyledWrapperLayout>
       <Container>

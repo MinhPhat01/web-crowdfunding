@@ -19,8 +19,8 @@ export const listNavbar = [
   {
     id: 2,
     name: "Campaign",
-    icon: <IconCampaign sx={{ stroke: "#A2A2A8", fill: "none" }} />,
-    iconActive: <IconCampaign sx={{ stroke: "#1DC071", fill: "none" }} />,
+    icon: <IconCampaign sx={{ fill: "#A2A2A8" }} />,
+    iconActive: <IconCampaign sx={{ fill: "#1DC071" }} />,
     src: "/campaign",
   },
   {
@@ -49,15 +49,15 @@ export const listNavbar = [
         }}
       />
     ),
-    src: "/profile",
+    src: "/profile-setting",
   },
-  {
-    id: 6,
-    name: "Logout",
-    icon: <IconLogout sx={{ stroke: "#A2A2A8", fill: "none" }} />,
-    iconActive: <IconLogout sx={{ stroke: "#1DC071", fill: "none" }} />,
-    src: "/logout",
-  },
+  // {
+  //   id: 6,
+  //   name: "Logout",
+  //   icon: <IconLogout sx={{ stroke: "#A2A2A8", fill: "none" }} />,
+  //   iconActive: <IconLogout sx={{ stroke: "#1DC071", fill: "none" }} />,
+  //   src: "/logout",
+  // },
 ];
 
 export default function ListNavbar() {

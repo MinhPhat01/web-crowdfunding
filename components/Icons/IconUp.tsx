@@ -1,10 +1,12 @@
 import { SvgIconProps } from "@mui/material";
-import SVGIconBase from "./SVGIconBase";
 
 export default function IconUp(props: SvgIconProps) {
   return (
-    <SVGIconBase {...props} viewBox="-5 -5 24 24">
-      <path d="M16 2.293L11.707 6.586L7.707 2.586L0 10.293L1.414 11.707L7.707 5.414L11.707 9.414L17.414 3.707L19.707 6V0H13.707L16 2.293Z"></path>
-    </SVGIconBase>
+    <svg width={20} height={12} fill="none" {...props}>
+      <path
+        d="M16 2.293l-4.293 4.293-4-4L0 10.293l1.414 1.414 6.293-6.293 4 4 5.707-5.707L19.707 6V0h-6L16 2.293z"
+        fill="#A2A2A8"
+      />
+    </svg>
   );
 }

@@ -22,3 +22,4 @@ export { default as IconLogout } from "./Icons/IconLogout";
 export { default as IconLight } from "./Icons/IconLight";
 export { default as IconFolder } from "./Icons/IconFolder";
 export { default as IconPlus } from "./Icons/IconPlus";
+export { default as IconEdit } from "./Icons/IconEdit";

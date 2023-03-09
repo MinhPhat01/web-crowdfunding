@@ -13,12 +13,7 @@ export default function Fundrasing() {
       columnGap="10px"
       sx={{ cursor: "pointer" }}
     >
-      <IconUp
-        sx={{
-          fill: iconColor,
-          stroke: iconColor,
-        }}
-      />
+      <IconUp />
       <Typography variant="bodyText" color={theme.palette.neutral?.neutral2}>
         Fundrising for
       </Typography>
