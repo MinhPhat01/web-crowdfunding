@@ -1,4 +1,3 @@
-import React from "react";
 import { Button, ButtonProps, styled } from "@mui/material";
 import { PALETTE_COLOR, PSEUDO_STATE } from "@/configuration";
 

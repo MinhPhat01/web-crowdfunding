@@ -5,7 +5,6 @@ import { Box, ButtonProps, styled, Typography, useTheme } from "@mui/material";
 import Image from "../Image";
 import Spacing from "../Spacing";
 import ButtonSecondary from "../Button/ButtonSecondary";
-
 import { PSEUDO_STATE } from "@/configuration";
 
 interface StyledButtonProps extends ButtonProps {
@@ -25,9 +24,7 @@ export default function PaymentCard(props: PaymentCardProps) {
   const [isConnected, setIsConnected] = useState<boolean>(false);
 
   const handleConnect = useCallback(() => {
-    setIsConnected((prevState) => {
-      return !prevState;
-    });
+    setIsConnected((prevState) => !prevState);
   }, []);
 
   return (
@@ -64,14 +61,13 @@ export default function PaymentCard(props: PaymentCardProps) {
 }
 
 const StyledWrapper = styled(Box)(({ theme }) => {
+  const white = theme.palette.common.white;
+  const darkLight = theme.palette.darkColor.light;
   return {
     textAlign: "center",
     padding: "1.563rem",
     borderRadius: "1.25rem",
-    backgroundColor:
-      theme.palette.mode === "dark"
-        ? theme.palette.darkColor.light
-        : theme.palette.common.white,
+    backgroundColor: theme.palette.mode === "dark" ? darkLight : white,
   };
 });
 
@@ -87,18 +83,20 @@ const StyledWrapperImg = styled(Box)(() => {
 const StyledButton = styled(ButtonSecondary, {
   shouldForwardProp: (propName) => propName !== "isConnected",
 })<StyledButtonProps>(({ isConnected, theme }) => {
+  const white = theme.palette.common.white;
+  const secondary = theme.palette.secondary.main;
+
   if (isConnected === true) {
     return {
       width: "100%",
-      color: theme.palette.common.white,
-      backgroundColor: theme.palette.secondary.main,
+      color: white,
+      backgroundColor: secondary,
       boxShadow: "none",
     };
   } else {
     return {
       width: "100%",
-      color:
-        theme.palette.mode === "dark" ? theme.palette.common.white : "#6F49FD",
+      color: theme.palette.mode === "dark" ? white : "#6F49FD",
       backgroundColor: theme.palette.mode === "dark" ? "#352A65" : "#EEEAFD",
       boxShadow: "none",
       [PSEUDO_STATE.hover]: {

@@ -45,9 +45,7 @@ declare module "@mui/material/styles/createPalette" {
       light: string;
     };
 
-    colorIcon?: {
-      colorIcon: string;
-    };
+    colorIcon: string;
   }
 
   interface PaletteOptions {
@@ -63,9 +61,7 @@ declare module "@mui/material/styles/createPalette" {
       light: string;
     };
 
-    colorIcon?: {
-      colorIcon?: string;
-    };
+    colorIcon: string;
   }
 }
 

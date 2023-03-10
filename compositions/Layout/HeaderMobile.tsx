@@ -1,4 +1,4 @@
-import React, { Fragment, useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 import Hamburger from "hamburger-react";
 
 import { Avatar, Box, styled } from "@mui/material";
@@ -25,12 +25,13 @@ export default function HeaderMobile() {
       <Box width="60%">
         <SearchInput />
       </Box>
+
       <Avatar src="/images/cat.avif" />
     </StyledWrapperHeaderMobile>
   );
 }
 
-const StyledWrapperHeaderMobile = styled(Box)(({ theme }) => {
+const StyledWrapperHeaderMobile = styled(Box)(() => {
   return {
     paddingTop: "20px",
     width: "100%",

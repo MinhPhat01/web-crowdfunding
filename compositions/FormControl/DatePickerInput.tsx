@@ -1,5 +1,5 @@
-import { useToggle } from "react-use";
 import { useCallback } from "react";
+import { useToggle } from "react-use";
 import { Control, FieldValues, Path, useController } from "react-hook-form";
 
 import { DesktopDatePicker } from "@mui/x-date-pickers";
@@ -46,8 +46,6 @@ const DatePickerInput = <T extends FieldValues>(
   });
 
   const theme = useTheme();
-  const { white } = theme.palette.common;
-  const { main } = theme.palette.darkColor;
 
   const [isFocus, toggleIsFocus] = useToggle(false);
 
@@ -77,15 +75,6 @@ const DatePickerInput = <T extends FieldValues>(
             ref={ref}
             value={value}
             onChange={onChange}
-            sx={{
-              width: "100%",
-              [".MuiInputBase-root"]: {
-                color: theme.palette.mode === "dark" ? white : "",
-              },
-              [".MuiOutlinedInput-notchedOutline"]: {
-                borderColor: theme.palette.mode === "dark" ? main : "",
-              },
-            }}
           />
         </Box>
       </LocalizationProvider>
@@ -96,17 +85,22 @@ const DatePickerInput = <T extends FieldValues>(
 export default DatePickerInput;
 
 const StyledDatePicker = styled(DesktopDatePicker)(({ theme }) => {
+  const { white, black } = theme.palette.common;
+  const main = theme.palette.primary.main;
+
   return {
+    width: "100%",
+
     [".MuiInputBase-root"]: {
       borderRadius: "10px",
-      padding: "4px 20px",
-      color: theme.palette.common.black,
+      padding: "2px 20px",
+      color: theme.palette.mode === "dark" ? white : black,
     },
     [".MuiOutlinedInput-notchedOutline"]: {
-      border: "1px solid black",
+      border: theme.palette.mode === "dark" ? "" : `1px solid ${black}`,
     },
     [".Mui-focused .MuiOutlinedInput-notchedOutline"]: {
-      border: `1px solid ${theme.palette.primary.main}`,
+      border: `1px solid ${main}`,
     },
   };
 });

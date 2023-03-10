@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Box, BoxProps, Stack, Typography, useTheme } from "@mui/material";
 
 import { IconEdit } from "@/components";

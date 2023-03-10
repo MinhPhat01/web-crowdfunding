@@ -69,12 +69,10 @@ const colors = {
     neutral4: PALETTE_COLOR.neutral4,
     neutral5: PALETTE_COLOR.neutral5,
   },
-  colorIcon: {
-    colorIcon: PALETTE_COLOR.colorIcon,
-  },
+  colorIcon: PALETTE_COLOR.colorIcon,
 };
 
-const styleTypography = {
+const styledText = {
   typography: {
     fontFamily: EpilogueFont.style.fontFamily,
     h1: createTypographyProperties({
@@ -146,7 +144,6 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     () =>
       createTheme({
         palette: {
-          // Theme
           mode,
           ...(mode === "light"
             ? {
@@ -162,7 +159,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
           ...colors,
         },
-        ...styleTypography,
+        ...styledText,
 
         //   fontFamily: EpilogueFont.style.fontFamily,
         //   h1: createTypographyProperties({
@@ -231,7 +228,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
             },
             styleOverrides: {
               root: {
-                ...styleTypography.typography.buttonPrimary,
+                ...styledText.typography.buttonPrimary,
                 textTransform: "capitalize",
                 whiteSpace: "nowrap",
                 padding: "13px",
@@ -333,7 +330,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
           MuiFormHelperText: {
             styleOverrides: {
               root: {
-                ...styleTypography.typography.paragraphText,
+                ...styledText.typography.paragraphText,
                 color: colors.error.main,
                 marginTop: 0,
               },

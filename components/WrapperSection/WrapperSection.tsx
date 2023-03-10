@@ -1,10 +1,6 @@
-import React from "react";
-
-import { Box, styled } from "@mui/material";
-
 import Spacing from "../Spacing";
-
 import { useMedia } from "@/hooks/useMedia";
+import { Box, styled } from "@mui/material";
 
 export default function WrapperSection({
   children,

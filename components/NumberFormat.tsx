@@ -1,5 +1,5 @@
-import { Input, InputProps } from "@mui/material";
 import { useCallback } from "react";
+import { Input, InputProps } from "@mui/material";
 import { NumericFormatProps, NumericFormat } from "react-number-format";
 
 export type ExtendedNumberFormatProps = InputProps & NumericFormatProps;

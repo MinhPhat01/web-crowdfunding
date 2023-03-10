@@ -1,18 +1,17 @@
 import { Fragment, useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 
-import { Box, Button, Grid, Stack, Typography, useTheme } from "@mui/material";
+import { Box, Button, Grid, Stack, styled, Typography } from "@mui/material";
 
 import { Spacing } from "@/components";
 import ButtonEdit from "./ButtonEdit";
 import { FormControlForEmail, FormControlForPassword } from "@/compositions";
+import { useMedia } from "@/hooks/useMedia";
 
 export default function Credential() {
-  const theme = useTheme();
-  const { black, white } = theme.palette.common;
-
   const [isEdit, setIsEdit] = useState<boolean>(false);
   const { control, handleSubmit } = useForm();
+  const { isMdDown } = useMedia();
 
   const onUpdateForm = useCallback((values: any) => {
     setIsEdit(false);
@@ -29,12 +28,7 @@ export default function Credential() {
         alignItems="center"
         justifyContent="space-between"
       >
-        <Typography
-          variant="h3"
-          color={theme.palette.mode === "dark" ? white : black}
-        >
-          Credential
-        </Typography>
+        <StyledTitle>Credential</StyledTitle>
 
         <ButtonEdit onClick={handleEditForm} />
       </Stack>
@@ -69,7 +63,7 @@ export default function Credential() {
         {isEdit && (
           <Button
             type="submit"
-            sx={{ padding: "0.75rem 4rem" }}
+            sx={{ padding: "0.75rem 4rem", width: isMdDown ? "100%" : "" }}
             onClick={handleSubmit(onUpdateForm)}
           >
             Update
@@ -79,3 +73,12 @@ export default function Credential() {
     </Fragment>
   );
 }
+
+const StyledTitle = styled(Typography)(({ theme }) => {
+  const { black, white } = theme.palette.common;
+
+  return {
+    ...theme.typography.h3,
+    color: theme.palette.mode === "dark" ? white : black,
+  };
+});

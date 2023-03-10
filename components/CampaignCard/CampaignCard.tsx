@@ -1,4 +1,3 @@
-import React from "react";
 import { useMeasure } from "react-use";
 
 import {
@@ -12,7 +11,7 @@ import {
 } from "@mui/material";
 
 import { IconFolder, Image, NumberFormatForUSD } from "@/components";
-import { BOX_SHADOW_COMMON, CARD_IMG_RATIO } from "@/constant";
+import { CARD_IMG_RATIO } from "@/constant";
 
 type CampaignCardProps = {
   img: string;
@@ -97,7 +96,9 @@ const CampaignCard = (props: CampaignCardProps) => {
 
         <Stack flexDirection="row" alignItems="center" columnGap="4px">
           <Avatar alt="Cat" src={avatar} />
+
           <StyledSubText>by</StyledSubText>
+
           <StyledAuthor>{author}</StyledAuthor>
         </Stack>
       </StyledWrapperContent>
@@ -108,21 +109,21 @@ const CampaignCard = (props: CampaignCardProps) => {
 export default CampaignCard;
 
 const StyledWrapperCard = styled(Box)(({ theme }) => {
+  const white = theme.palette.common.white;
+  const darkLight = theme.palette.darkColor.light;
+
   return {
     borderRadius: "15px",
-    backgroundColor:
-      theme.palette.mode === "dark"
-        ? theme.palette.darkColor.light
-        : theme.palette.common.white,
+    backgroundColor: theme.palette.mode === "dark" ? darkLight : white,
   };
 });
 
 const StyledWrapperContent = styled(Box)(() => {
   return {
-    padding: "1rem 1.1rem",
     display: "flex",
     rowGap: "10px",
     flexDirection: "column",
+    padding: "1rem 1.1rem",
   };
 });
 
@@ -133,10 +134,10 @@ const StyledTitle = styled(Typography)(({ theme }) => {
   return {
     ...theme.typography.h3,
     overflow: "hidden",
+    minHeight: 32 * 2,
+    WebkitLineClamp: 2,
     display: "-webkit-box",
     WebkitBoxOrient: "vertical",
-    WebkitLineClamp: 2,
-    minHeight: 32 * 2,
     color: theme.palette.mode === "dark" ? white : black,
   };
 });

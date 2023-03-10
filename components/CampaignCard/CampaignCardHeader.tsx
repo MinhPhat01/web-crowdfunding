@@ -106,8 +106,6 @@ export default function CampaignCardHeader(props: CampaignCardRowProps) {
   );
 }
 
-// -----Styled-------
-
 const StyledDesc = styled(Typography)(({ theme }) => {
   return {
     ...theme.typography.paragraphText,
@@ -126,17 +124,17 @@ const StyledNumber = styled(Typography)(({ theme }) => {
 const StyledSubText = styled(Typography)(({ theme }) => {
   return {
     ...theme.typography.bodyText2,
+    fontWeight: 400,
     lineHeight: "26px",
     color: theme.palette.neutral.neutral4,
-    fontWeight: 400,
   };
 });
 
 const StyledWrapper = styled(Box)(() => {
   return {
+    height: "100%",
     display: "flex",
     alignItems: "center",
-    height: "100%",
   };
 });
 

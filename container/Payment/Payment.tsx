@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 
-import { Box, Grid, styled, Typography, useTheme } from "@mui/material";
+import { Box, Grid, styled, Typography } from "@mui/material";
 
 import { PaymentCard, Spacing, WrapperSection } from "@/components";
 
@@ -9,7 +9,6 @@ import { useMedia } from "@/hooks/useMedia";
 
 export default function Payment() {
   const { isSmDown } = useMedia();
-  const theme = useTheme();
 
   const renderListPayment = useMemo(() => {
     return listPayment.map((item) => {
@@ -32,16 +31,7 @@ export default function Payment() {
       <Grid container justifyContent="center" alignItems="center">
         <Grid item xs={10} sm={10} md={8} textAlign="center">
           <Box>
-            <Typography
-              variant="h2"
-              color={
-                theme.palette.mode === "dark"
-                  ? theme.palette.common.white
-                  : theme.palette.common.black
-              }
-            >
-              Connect Your Payment Processor
-            </Typography>
+            <StyledTitle>Connect Your Payment Processor</StyledTitle>
 
             <StyledDesc>
               To Start Processing credit card payments and donations, you will
@@ -59,6 +49,15 @@ export default function Payment() {
     </WrapperSection>
   );
 }
+
+const StyledTitle = styled(Typography)(({ theme }) => {
+  const { white, black } = theme.palette.common;
+  return {
+    ...theme.typography.h2,
+    color: theme.palette.mode === "dark" ? white : black,
+    display: "block",
+  };
+});
 
 const StyledDesc = styled(Typography)(({ theme }) => {
   return {

@@ -14,7 +14,7 @@ import {
   Box,
 } from "@mui/material";
 import FormHelperText from "./FormHelperText";
-import { IconEmail, IconEyeOff, IconEyeOn, IconLock } from "@/components";
+import { IconEyeOff, IconEyeOn, IconLock } from "@/components";
 
 export type AugmentFormControlBaseProps<T extends FieldValues> = {
   label?: string;

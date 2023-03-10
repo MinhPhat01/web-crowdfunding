@@ -18,6 +18,7 @@ export default function Headline({ title, quantity }: HeadlineProps) {
       >
         {title}
       </Typography>
+
       {quantity && (
         <Typography
           variant="bodyText"

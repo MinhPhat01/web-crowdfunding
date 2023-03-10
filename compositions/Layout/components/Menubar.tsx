@@ -14,9 +14,9 @@ import {
 } from "@mui/material";
 
 import { listNavbar } from "@/ListNavbar";
-import { ButtonSecondary, IconLight, Image, Link, Spacing } from "@/components";
-
 import { useColorMode } from "@/contexts/ColorModeContext";
+
+import { ButtonSecondary, IconLight, Image, Link, Spacing } from "@/components";
 
 type MenubarProps = {
   isOpen: boolean;
@@ -29,10 +29,11 @@ interface StyledNavbarItemProps extends BoxProps {
 }
 
 export default function Menubar({ isOpen, closeMenu }: MenubarProps) {
-  const router = useRouter();
-  const { pathname } = router;
   const theme = useTheme();
+  const router = useRouter();
   const { toggleColorMode } = useColorMode();
+
+  const { pathname } = router;
 
   const renderListNavbar = useMemo(() => {
     return listNavbar.map((item) => {
@@ -121,11 +122,10 @@ const StyledWrapperMenubar = styled(Container)(({ theme }) => {
 });
 
 const StyledNavbar = styled(Box)(({ theme }) => {
+  const white = theme.palette.common.white;
+  const darkLight = theme.palette.darkColor.light;
   return {
-    backgroundColor:
-      theme.palette.mode === "dark"
-        ? theme.palette.darkColor.light
-        : theme.palette.common.white,
+    backgroundColor: theme.palette.mode === "dark" ? darkLight : white,
   };
 });
 
@@ -140,9 +140,9 @@ const StyledNavbarItem = styled(Box, {
   const light = currentPathname === link ? "#F1FBF7" : "#fff";
 
   return {
+    gap: "20px",
     display: "flex",
     alignItems: "center",
-    gap: "20px",
     padding: "14px 20px",
     backgroundColor: theme.palette.mode === "dark" ? dark : light,
   };
@@ -150,9 +150,9 @@ const StyledNavbarItem = styled(Box, {
 
 const StyledChangeTheme = styled(Box)(() => {
   return {
+    gap: "20px",
     display: "flex",
     alignItems: "center",
-    gap: "20px",
     padding: "14px 20px",
   };
 });

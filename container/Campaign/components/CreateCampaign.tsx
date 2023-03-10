@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Box, Grid, Stack, styled, Typography, useTheme } from "@mui/material";
 
 import { ButtonSecondary, IconPlus } from "@/components";
@@ -9,6 +7,7 @@ import { PALETTE_COLOR, PSEUDO_STATE } from "@/configuration";
 
 export default function CreateCampaign() {
   const theme = useTheme();
+  const { black, white } = theme.palette.common;
   const { isSmDown } = useMedia();
 
   return (
@@ -23,11 +22,7 @@ export default function CreateCampaign() {
             <Stack flexDirection="column">
               <Typography
                 variant="h3"
-                color={
-                  theme.palette.mode === "dark"
-                    ? theme.palette.common.white
-                    : theme.palette.common.black
-                }
+                color={theme.palette.mode === "dark" ? white : black}
               >
                 Create Your Campaign
               </Typography>
@@ -67,13 +62,13 @@ export default function CreateCampaign() {
 }
 
 const StyledWrapper = styled(Box)(({ theme }) => {
+  const white = theme.palette.common.white;
+  const darkLight = theme.palette.darkColor.light;
+
   return {
     borderRadius: "1.25rem",
     padding: "1.875rem 2rem",
-    backgroundColor:
-      theme.palette.mode === "dark"
-        ? theme.palette.darkColor.light
-        : theme.palette.common.white,
+    backgroundColor: theme.palette.mode === "dark" ? darkLight : white,
   };
 });
 

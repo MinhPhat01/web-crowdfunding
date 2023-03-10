@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-
 import { Box, Grid, Stack, styled, Typography } from "@mui/material";
 
 import { Spacing, WrapperSection } from "@/components";
@@ -60,22 +59,20 @@ export default function Withdraw() {
 }
 
 const StyledTitle = styled(Typography)(({ theme }) => {
+  const { white, black } = theme.palette.common;
   return {
     ...theme.typography.paragraphText,
     fontWeight: 600,
-    color:
-      theme.palette.mode === "dark"
-        ? theme.palette.common.white
-        : theme.palette.common.black,
+    color: theme.palette.mode === "dark" ? white : black,
   };
 });
 
 const StyledWrapperItem = styled(Box)(({ theme }) => {
+  const white = theme.palette.common.white;
+  const darkLight = theme.palette.darkColor.light;
+
   return {
-    backgroundColor:
-      theme.palette.mode === "dark"
-        ? theme.palette.darkColor.light
-        : theme.palette.common.white,
+    backgroundColor: theme.palette.mode === "dark" ? darkLight : white,
     padding: "1rem 1.875rem",
     overflow: "auto",
   };

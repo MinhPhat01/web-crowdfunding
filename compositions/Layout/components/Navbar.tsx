@@ -6,7 +6,6 @@ import { Box, BoxProps, Stack, styled } from "@mui/material";
 import { IconLight } from "@/components";
 
 import { listNavbar } from "@/ListNavbar";
-
 import { BOX_SHADOW_COMMON } from "@/constant";
 import { useColorMode } from "@/contexts/ColorModeContext";
 
@@ -49,14 +48,13 @@ export default function Navbar() {
 }
 
 const StyledWrapperNavbar = styled(Box)(({ theme }) => {
+  const white = theme.palette.common.white;
+  const darkLight = theme.palette.darkColor.light;
   return {
-    boxShadow: BOX_SHADOW_COMMON,
-    backgroundColor:
-      theme.palette.mode === "dark"
-        ? theme.palette.darkColor.light
-        : theme.palette.common.white,
     padding: "2rem",
     borderRadius: "1.25rem",
+    boxShadow: BOX_SHADOW_COMMON,
+    backgroundColor: theme.palette.mode === "dark" ? darkLight : white,
   };
 });
 
@@ -64,16 +62,14 @@ const StyledWrapperIcon = styled(Box, {
   shouldForwardProp: (propName) =>
     propName !== "currentRouter" && propName !== "link",
 })<BoxWrapperIconProps>(({ currentRouter, link, theme }) => {
+  const darkMain = theme.palette.darkColor.main;
   if (currentRouter === link) {
     return {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       padding: "8px",
-      background:
-        theme.palette.mode === "dark"
-          ? theme.palette.darkColor.main
-          : "#F1FBF7",
+      background: theme.palette.mode === "dark" ? darkMain : "#F1FBF7",
       borderRadius: "10px",
     };
   } else {

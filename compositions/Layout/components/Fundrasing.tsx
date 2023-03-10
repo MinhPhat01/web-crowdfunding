@@ -1,29 +1,39 @@
-import { Stack, Typography, useTheme } from "@mui/material";
-
+import { Box, Typography, styled } from "@mui/material";
 import { IconArrowDown, IconUp } from "@/components";
 
 export default function Fundrasing() {
-  const theme = useTheme();
-  const iconColor = theme.palette?.colorIcon?.colorIcon;
-
   return (
-    <Stack
-      alignItems="center"
-      flexDirection="row"
-      columnGap="10px"
-      sx={{ cursor: "pointer" }}
-    >
+    <StyledWrapper>
       <IconUp />
-      <Typography variant="bodyText" color={theme.palette.neutral?.neutral2}>
-        Fundrising for
-      </Typography>
 
-      <IconArrowDown
-        sx={{
-          fill: iconColor,
-          stroke: iconColor,
-        }}
-      />
-    </Stack>
+      <StyledText>Fundrising for</StyledText>
+
+      <StyledIcon />
+    </StyledWrapper>
   );
 }
+
+const StyledWrapper = styled(Box)(() => {
+  return {
+    gap: "10px",
+    cursor: "pointer",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+  };
+});
+
+const StyledText = styled(Typography)(({ theme }) => {
+  return {
+    ...theme.typography.bodyText,
+    color: theme.palette.neutral.neutral2,
+  };
+});
+
+const StyledIcon = styled(IconArrowDown)(({ theme }) => {
+  const iconColor = theme.palette.colorIcon;
+  return {
+    fill: iconColor,
+    stroke: iconColor,
+  };
+});

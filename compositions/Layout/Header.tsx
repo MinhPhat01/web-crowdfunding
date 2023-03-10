@@ -1,8 +1,7 @@
-import { Box, Grid, styled, Avatar } from "@mui/material";
-
 import Fundrasing from "./components/Fundrasing";
 import SearchInput from "./components/SearchInput";
 import { ButtonSecondary, Image, Link } from "@/components";
+import { Box, Grid, styled, Avatar } from "@mui/material";
 
 export default function Header() {
   return (
@@ -49,8 +48,6 @@ const HeaderRight = () => {
     </StyledHeaderRight>
   );
 };
-
-// ---------------- Styled ---------------------
 
 const StyledWrapperImg = styled(Box)(() => {
   return {
