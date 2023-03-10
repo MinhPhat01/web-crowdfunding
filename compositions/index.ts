@@ -9,3 +9,5 @@ export { default as FormControlBase } from "./FormControl/FormControlBase";
 export { default as FormControlForCheckbox } from "./FormControl/FormControlForCheckbox";
 export { default as DatePickerInput } from "./FormControl/DatePickerInput";
 export { default as FormControlForPhoneNumber } from "./FormControl/FormControlForPhoneNumber ";
+export { default as FormControlForEmail } from "./FormControl/FormControlForEmail";
+export { default as FormControlForPassword } from "./FormControl/FormControlForPassword";

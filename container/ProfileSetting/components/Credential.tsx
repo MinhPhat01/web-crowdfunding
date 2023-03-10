@@ -5,15 +5,11 @@ import { Box, Button, Grid, Stack, Typography, useTheme } from "@mui/material";
 
 import { Spacing } from "@/components";
 import ButtonEdit from "./ButtonEdit";
-import {
-  DatePickerInput,
-  FormControl,
-  FormControlForPhoneNumber,
-} from "@/compositions";
+import { FormControlForEmail, FormControlForPassword } from "@/compositions";
 
 export default function Credential() {
   const theme = useTheme();
-  const black = theme.palette.common.black;
+  const { black, white } = theme.palette.common;
 
   const [isEdit, setIsEdit] = useState<boolean>(false);
   const { control, handleSubmit } = useForm();
@@ -33,7 +29,10 @@ export default function Credential() {
         alignItems="center"
         justifyContent="space-between"
       >
-        <Typography variant="h3" color={black}>
+        <Typography
+          variant="h3"
+          color={theme.palette.mode === "dark" ? white : black}
+        >
           Credential
         </Typography>
 
@@ -44,38 +43,23 @@ export default function Credential() {
 
       <Box>
         <Grid container spacing="40px">
+          <Grid item xs={12}>
+            <FormControlForEmail name="email" label="Email" control={control} />
+          </Grid>
+
           <Grid item xs={6}>
-            <FormControl
-              name="firstName"
-              label="First Name"
+            <FormControlForPassword
+              name="newPassword"
               control={control}
-              placeholder="Please enter your first name"
+              label="New Password"
             />
           </Grid>
 
           <Grid item xs={6}>
-            <FormControl
-              name="lastName"
-              label="Last Name"
+            <FormControlForPassword
+              name="confirmPassword"
               control={control}
-              placeholder="Please enter your last name"
-            />
-          </Grid>
-
-          <Grid item xs={6}>
-            <DatePickerInput
-              name="date"
-              label="Date of birth"
-              control={control}
-            />
-          </Grid>
-
-          <Grid item xs={6}>
-            <FormControlForPhoneNumber
-              name="phoneNumber"
-              control={control}
-              label="Mobile Number"
-              placeholder="Please enter your phone number"
+              label="Confirm Password"
             />
           </Grid>
         </Grid>

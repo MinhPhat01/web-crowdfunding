@@ -13,7 +13,7 @@ import {
 
 export default function PersonalInformation() {
   const theme = useTheme();
-  const black = theme.palette.common.black;
+  const { black, white } = theme.palette.common;
 
   const [isEdit, setIsEdit] = useState<boolean>(false);
   const { control, handleSubmit } = useForm();
@@ -33,7 +33,10 @@ export default function PersonalInformation() {
         alignItems="center"
         justifyContent="space-between"
       >
-        <Typography variant="h3" color={black}>
+        <Typography
+          variant="h3"
+          color={theme.palette.mode === "dark" ? white : black}
+        >
           Personal Information
         </Typography>
 

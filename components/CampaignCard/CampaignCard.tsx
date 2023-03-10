@@ -111,7 +111,9 @@ const StyledWrapperCard = styled(Box)(({ theme }) => {
   return {
     borderRadius: "15px",
     backgroundColor:
-      theme.palette.mode === "dark" ? "#1C1C24" : theme.palette.common.white,
+      theme.palette.mode === "dark"
+        ? theme.palette.darkColor.light
+        : theme.palette.common.white,
   };
 });
 

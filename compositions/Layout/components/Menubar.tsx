@@ -123,7 +123,9 @@ const StyledWrapperMenubar = styled(Container)(({ theme }) => {
 const StyledNavbar = styled(Box)(({ theme }) => {
   return {
     backgroundColor:
-      theme.palette.mode === "dark" ? "#1C1C24" : theme.palette.common.white,
+      theme.palette.mode === "dark"
+        ? theme.palette.darkColor.light
+        : theme.palette.common.white,
   };
 });
 
@@ -131,7 +133,10 @@ const StyledNavbarItem = styled(Box, {
   shouldForwardProp: (propName) =>
     propName !== "currentPathname" && propName !== "link",
 })<StyledNavbarItemProps>(({ currentPathname, link, theme }) => {
-  const dark = currentPathname === link ? "#3A3A43" : "#1C1C24";
+  const dark =
+    currentPathname === link
+      ? theme.palette.darkColor.main
+      : theme.palette.darkColor.light;
   const light = currentPathname === link ? "#F1FBF7" : "#fff";
 
   return {

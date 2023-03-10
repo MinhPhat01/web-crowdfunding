@@ -42,34 +42,39 @@ const createTypographyProperties = (
   };
 };
 
-const defaultTheme = createTheme({
-  palette: {
-    primary: {
-      main: PALETTE_COLOR.primary,
-      light: PALETTE_COLOR.primaryLight,
-    },
-    secondary: {
-      main: PALETTE_COLOR.secondary,
-      light: PALETTE_COLOR.secondaryLight,
-    },
-    common: {
-      white: PALETTE_COLOR.white,
-      black: PALETTE_COLOR.black,
-    },
-    error: {
-      main: PALETTE_COLOR.error,
-    },
-    neutral: {
-      neutral1: PALETTE_COLOR.neutral1,
-      neutral2: PALETTE_COLOR.neutral2,
-      neutral3: PALETTE_COLOR.neutral3,
-      neutral4: PALETTE_COLOR.neutral4,
-      neutral5: PALETTE_COLOR.neutral5,
-    },
-    colorIcon: {
-      colorIcon: PALETTE_COLOR.colorIcon,
-    },
+const colors = {
+  darkColor: {
+    main: "#3A3A43",
+    light: "#1C1C24",
   },
+  primary: {
+    main: PALETTE_COLOR.primary,
+    light: PALETTE_COLOR.primaryLight,
+  },
+  secondary: {
+    main: PALETTE_COLOR.secondary,
+    light: PALETTE_COLOR.secondaryLight,
+  },
+  common: {
+    white: PALETTE_COLOR.white,
+    black: PALETTE_COLOR.black,
+  },
+  error: {
+    main: PALETTE_COLOR.error,
+  },
+  neutral: {
+    neutral1: PALETTE_COLOR.neutral1,
+    neutral2: PALETTE_COLOR.neutral2,
+    neutral3: PALETTE_COLOR.neutral3,
+    neutral4: PALETTE_COLOR.neutral4,
+    neutral5: PALETTE_COLOR.neutral5,
+  },
+  colorIcon: {
+    colorIcon: PALETTE_COLOR.colorIcon,
+  },
+};
+
+const styleTypography = {
   typography: {
     fontFamily: EpilogueFont.style.fontFamily,
     h1: createTypographyProperties({
@@ -123,7 +128,7 @@ const defaultTheme = createTheme({
       lineHeight: "26px",
     }),
   },
-});
+};
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [mode, setMode] = useState<"light" | "dark">("light");
@@ -143,7 +148,6 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
         palette: {
           // Theme
           mode,
-
           ...(mode === "light"
             ? {
                 background: {
@@ -156,86 +160,62 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
                 },
               }),
 
-          //Setting Common
-          primary: {
-            main: PALETTE_COLOR.primary,
-            light: PALETTE_COLOR.primaryLight,
-          },
-          secondary: {
-            main: PALETTE_COLOR.secondary,
-            light: PALETTE_COLOR.secondaryLight,
-          },
-          common: {
-            white: PALETTE_COLOR.white,
-            black: PALETTE_COLOR.black,
-          },
-          error: {
-            main: PALETTE_COLOR.error,
-          },
-          neutral: {
-            neutral1: PALETTE_COLOR.neutral1,
-            neutral2: PALETTE_COLOR.neutral2,
-            neutral3: PALETTE_COLOR.neutral3,
-            neutral4: PALETTE_COLOR.neutral4,
-            neutral5: PALETTE_COLOR.neutral5,
-          },
-          colorIcon: {
-            colorIcon: PALETTE_COLOR.colorIcon,
-          },
+          ...colors,
         },
-        typography: {
-          fontFamily: EpilogueFont.style.fontFamily,
-          h1: createTypographyProperties({
-            fontWeight: 700,
-            fontSize: 40,
-            lineHeight: "60px",
-          }),
-          h2: createTypographyProperties({
-            fontWeight: 700,
-            fontSize: 25,
-            lineHeight: "38px",
-          }),
-          h3: createTypographyProperties({
-            fontWeight: 600,
-            fontSize: 22,
-            lineHeight: "32px",
-          }),
-          h4: createTypographyProperties({
-            fontWeight: 700,
-            fontSize: 20,
-            lineHeight: "30px",
-          }),
-          bodyText: createTypographyProperties({
-            fontWeight: 700,
-            fontSize: 18,
-            lineHeight: "30px",
-          }),
-          bodyText2: createTypographyProperties({
-            fontWeight: 700,
-            fontSize: 16,
-            lineHeight: "24px",
-          }),
-          paragraphText: createTypographyProperties({
-            fontWeight: 700,
-            fontSize: 14,
-            lineHeight: "22px",
-          }),
-          paragraphText2: createTypographyProperties({
-            fontWeight: 600,
-            fontSize: 12,
-            lineHeight: "18px",
-          }),
-          buttonPrimary: createTypographyProperties({
-            fontWeight: 600,
-            fontSize: 16,
-            lineHeight: "26px",
-          }),
-          buttonSecondary: createTypographyProperties({
-            fontWeight: 600,
-            fontSize: 16,
-            lineHeight: "26px",
-          }),
-        },
+        ...styleTypography,
+
+        //   fontFamily: EpilogueFont.style.fontFamily,
+        //   h1: createTypographyProperties({
+        //     fontWeight: 700,
+        //     fontSize: 40,
+        //     lineHeight: "60px",
+        //   }),
+        //   h2: createTypographyProperties({
+        //     fontWeight: 700,
+        //     fontSize: 25,
+        //     lineHeight: "38px",
+        //   }),
+        //   h3: createTypographyProperties({
+        //     fontWeight: 600,
+        //     fontSize: 22,
+        //     lineHeight: "32px",
+        //   }),
+        //   h4: createTypographyProperties({
+        //     fontWeight: 700,
+        //     fontSize: 20,
+        //     lineHeight: "30px",
+        //   }),
+        //   bodyText: createTypographyProperties({
+        //     fontWeight: 700,
+        //     fontSize: 18,
+        //     lineHeight: "30px",
+        //   }),
+        //   bodyText2: createTypographyProperties({
+        //     fontWeight: 700,
+        //     fontSize: 16,
+        //     lineHeight: "24px",
+        //   }),
+        //   paragraphText: createTypographyProperties({
+        //     fontWeight: 700,
+        //     fontSize: 14,
+        //     lineHeight: "22px",
+        //   }),
+        //   paragraphText2: createTypographyProperties({
+        //     fontWeight: 600,
+        //     fontSize: 12,
+        //     lineHeight: "18px",
+        //   }),
+        //   buttonPrimary: createTypographyProperties({
+        //     fontWeight: 600,
+        //     fontSize: 16,
+        //     lineHeight: "26px",
+        //   }),
+        //   buttonSecondary: createTypographyProperties({
+        //     fontWeight: 600,
+        //     fontSize: 16,
+        //     lineHeight: "26px",
+        //   }),
+        // },
 
         //Setting Components
         components: {
@@ -251,12 +231,12 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
             },
             styleOverrides: {
               root: {
-                ...defaultTheme.typography.buttonPrimary,
+                ...styleTypography.typography.buttonPrimary,
                 textTransform: "capitalize",
                 whiteSpace: "nowrap",
                 padding: "13px",
                 borderRadius: "10px",
-                color: defaultTheme.palette.common.white,
+                color: colors.common.white,
                 [PSEUDO_STATE.hover]: {
                   backgroundColor: PALETTE_COLOR.primaryHovered,
                 },
@@ -270,7 +250,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
                   borderColor: PALETTE_COLOR.primary,
                 },
                 [PSEUDO_STATE.hover]: {
-                  color: defaultTheme.palette.common.white,
+                  color: colors.common.white,
                 },
               },
             },
@@ -301,10 +281,10 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
                 color: "#4B5264",
                 textTransform: "uppercase",
                 [COMPONENT_STATE.focused]: {
-                  color: defaultTheme.palette.primary.main,
+                  color: colors.primary.main,
                 },
                 [COMPONENT_STATE.active]: {
-                  color: defaultTheme.palette.primary.main,
+                  color: colors.primary.main,
                 },
               },
             },
@@ -313,24 +293,26 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
           MuiInput: {
             styleOverrides: {
               root: {
-                color: defaultTheme.palette.common.black,
+                color:
+                  mode === "dark" ? colors.common.white : colors.common.black,
                 fontSize: "14px",
                 lineHeight: "22px",
                 fontWeight: 500,
                 marginTop: "0 !important",
-                border: "1px solid #F1F1F3",
+                border: "1px solid",
                 borderRadius: "10px",
                 padding: "15px 25px",
-                borderColor: defaultTheme.palette.common.black,
+                borderColor:
+                  mode === "dark" ? colors.darkColor.main : colors.common.black,
 
                 [COMPONENT_STATE.active]: {
-                  borderColor: defaultTheme.palette.primary.main,
+                  borderColor: colors.primary.main,
                 },
                 [COMPONENT_STATE.focused]: {
-                  border: `1px solid ${defaultTheme.palette.primary.main}`,
+                  border: `1px solid ${colors.primary.main}`,
                 },
                 [COMPONENT_STATE.error]: {
-                  borderColor: defaultTheme.palette.error.main,
+                  borderColor: colors.error.main,
                 },
               },
             },
@@ -351,8 +333,8 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
           MuiFormHelperText: {
             styleOverrides: {
               root: {
-                ...defaultTheme.typography.paragraphText,
-                color: defaultTheme.palette.error.main,
+                ...styleTypography.typography.paragraphText,
+                color: colors.error.main,
                 marginTop: 0,
               },
             },
@@ -368,7 +350,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
           MuiSvgIcon: {
             styleOverrides: {
               root: {
-                stroke: defaultTheme.palette.common.white,
+                stroke: colors.common.white,
               },
             },
           },

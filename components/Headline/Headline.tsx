@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Stack, Typography, useTheme } from "@mui/material";
 
 type HeadlineProps = {

@@ -1,3 +1,5 @@
+import { useToggle } from "react-use";
+import { useCallback } from "react";
 import { Control, FieldValues, Path, useController } from "react-hook-form";
 
 import { DesktopDatePicker } from "@mui/x-date-pickers";
@@ -6,13 +8,14 @@ import { DatePickerProps } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 
 import {
+  Box,
   FormControl,
   FormControlProps,
   FormLabel,
   FormLabelProps,
   styled,
+  useTheme,
 } from "@mui/material";
-import { COMPONENT_STATE } from "@/configuration";
 
 type DatePickerControlProps<T extends FieldValues> = {
   label?: string;
@@ -42,19 +45,49 @@ const DatePickerInput = <T extends FieldValues>(
     control,
   });
 
+  const theme = useTheme();
+  const { white } = theme.palette.common;
+  const { main } = theme.palette.darkColor;
+
+  const [isFocus, toggleIsFocus] = useToggle(false);
+
+  const onFocusHandler = useCallback(() => {
+    toggleIsFocus(true);
+  }, []);
+
+  const onBlurHandler = useCallback(() => {
+    toggleIsFocus(false);
+  }, []);
+
   return (
     <FormControl {...FormControlProps}>
-      <FormLabel {...FormLabelProps} id={name}>
+      <FormLabel
+        sx={{
+          color: isFocus ? theme.palette.primary.main : "",
+        }}
+        {...FormLabelProps}
+      >
         {label}
       </FormLabel>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <StyledDatePicker
-          {...DatePickerProps}
-          format="DD-MM-YYYY"
-          ref={ref}
-          value={value}
-          onChange={onChange}
-        />
+        <Box onFocus={onFocusHandler} onBlur={onBlurHandler}>
+          <StyledDatePicker
+            {...DatePickerProps}
+            format="DD-MM-YYYY"
+            ref={ref}
+            value={value}
+            onChange={onChange}
+            sx={{
+              width: "100%",
+              [".MuiInputBase-root"]: {
+                color: theme.palette.mode === "dark" ? white : "",
+              },
+              [".MuiOutlinedInput-notchedOutline"]: {
+                borderColor: theme.palette.mode === "dark" ? main : "",
+              },
+            }}
+          />
+        </Box>
       </LocalizationProvider>
     </FormControl>
   );

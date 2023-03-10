@@ -1,16 +1,19 @@
 import { Typography, useTheme } from "@mui/material";
 
+import Credential from "./components/Credential";
 import { Spacing, WrapperSection } from "@/components";
 import PersonalInformation from "./components/PersonalInformation";
-import Credential from "./components/Credential";
 
 export default function ProfileSetting() {
   const theme = useTheme();
-  const black = theme.palette.common.black;
+  const { black, white } = theme.palette.common;
 
   return (
     <WrapperSection>
-      <Typography variant="h2" color={black}>
+      <Typography
+        variant="h2"
+        color={theme.palette.mode === "dark" ? white : black}
+      >
         Account Information
       </Typography>
 

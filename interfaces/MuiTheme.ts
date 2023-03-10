@@ -40,6 +40,10 @@ declare module "@mui/material/styles/createPalette" {
       neutral4: string;
       neutral5: string;
     };
+    darkColor: {
+      main: string;
+      light: string;
+    };
 
     colorIcon?: {
       colorIcon: string;
@@ -53,6 +57,10 @@ declare module "@mui/material/styles/createPalette" {
       neutral3: string;
       neutral4: string;
       neutral5: string;
+    };
+    darkColor: {
+      main: string;
+      light: string;
     };
 
     colorIcon?: {

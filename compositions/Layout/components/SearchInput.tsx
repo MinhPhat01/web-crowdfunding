@@ -29,7 +29,9 @@ const StyledSearchInput = styled(InputBase)(({ theme }) => {
     ...theme.typography.paragraphText,
     fontWeight: 400,
     backgroundColor:
-      theme.palette.mode === "dark" ? "#1C1C24" : theme.palette.common.white,
+      theme.palette.mode === "dark"
+        ? theme.palette.darkColor.light
+        : theme.palette.common.white,
     color: theme.palette.mode === "dark" ? theme.palette.neutral?.neutral2 : "",
   };
 });

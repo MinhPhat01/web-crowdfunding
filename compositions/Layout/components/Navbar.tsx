@@ -52,7 +52,9 @@ const StyledWrapperNavbar = styled(Box)(({ theme }) => {
   return {
     boxShadow: BOX_SHADOW_COMMON,
     backgroundColor:
-      theme.palette.mode === "dark" ? "#1C1C24" : theme.palette.common.white,
+      theme.palette.mode === "dark"
+        ? theme.palette.darkColor.light
+        : theme.palette.common.white,
     padding: "2rem",
     borderRadius: "1.25rem",
   };
@@ -68,7 +70,10 @@ const StyledWrapperIcon = styled(Box, {
       alignItems: "center",
       justifyContent: "center",
       padding: "8px",
-      background: theme.palette.mode === "dark" ? "#3A3A43" : "#F1FBF7",
+      background:
+        theme.palette.mode === "dark"
+          ? theme.palette.darkColor.main
+          : "#F1FBF7",
       borderRadius: "10px",
     };
   } else {

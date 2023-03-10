@@ -73,7 +73,9 @@ const StyledTitle = styled(Typography)(({ theme }) => {
 const StyledWrapperItem = styled(Box)(({ theme }) => {
   return {
     backgroundColor:
-      theme.palette.mode === "dark" ? "#1C1C24" : theme.palette.common.white,
+      theme.palette.mode === "dark"
+        ? theme.palette.darkColor.light
+        : theme.palette.common.white,
     padding: "1rem 1.875rem",
     overflow: "auto",
   };
